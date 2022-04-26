@@ -20,3 +20,6 @@ This to files are provided by OpenCV, you can get it in the direction "sources/d
 
 # Step 4: Project 3, Using OpenCV to open a camera
 In this project, get vedio from camera.
+
+# Step 5: Project 4, face detection from vedio
+In this project, using a 100ms timer to detect face from vedio.
