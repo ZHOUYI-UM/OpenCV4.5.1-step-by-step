@@ -6,31 +6,34 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>381</width>
+    <height>552</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="lblImage">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>10</x>
       <y>10</y>
-      <width>401</width>
-      <height>81</height>
+      <width>360</width>
+      <height>480</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>22</pointsize>
-     </font>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Sunken</enum>
+    </property>
+    <property name="lineWidth">
+     <number>2</number>
     </property>
     <property name="text">
-     <string>In OpenCV window
-Press Q to exit the video</string>
+     <string>TextLabel</string>
     </property>
    </widget>
   </widget>
@@ -39,7 +42,7 @@ Press Q to exit the video</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>381</width>
      <height>23</height>
     </rect>
    </property>
