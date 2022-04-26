@@ -20,7 +20,7 @@ public:
     ~MainWindow();
 
 private slots:
-    void slotCameraImage(const QImage &);
+    void slotCameraImage(const cv::Mat &);
 
 private:
     QImage cvMat2QImage(const cv::Mat &mat);

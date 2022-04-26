@@ -10,7 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     _threadCamera = new QWorker(this);
-    connect(_threadCamera, SIGNAL(sigCameraImage(const QImage &)), this, SLOT(slotCameraImage(const QImage &)));
+    connect(_threadCamera, SIGNAL(sigCameraImage(const cv::Mat &)), this, SLOT(slotCameraImage(const cv::Mat &)));
     _threadCamera->start();
 }
 
@@ -65,8 +65,9 @@ QImage MainWindow::cvMat2QImage(const cv::Mat &mat)
     }
 }
 
-void MainWindow::slotCameraImage(const QImage &img)
+void MainWindow::slotCameraImage(const cv::Mat &img)
 {
-    ui->lblImage->setPixmap(QPixmap::fromImage(img.scaled(ui->lblImage->size(), Qt::KeepAspectRatio)));
+    QImage _imgDis = cvMat2QImage(img);
+    ui->lblImage->setPixmap(QPixmap::fromImage(_imgDis.scaled(ui->lblImage->size(), Qt::KeepAspectRatio)));
     ui->lblImage->setScaledContents(true);
 }

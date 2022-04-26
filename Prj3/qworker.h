@@ -3,7 +3,6 @@
 
 #include <QThread>
 #include <opencv2/opencv.hpp>
-#include <QImage>
 
 class QWorker : public QThread
 {
@@ -16,10 +15,7 @@ protected:
     virtual void run() Q_DECL_OVERRIDE;//虚函数  线程处理函数（和主线程不在同一个线程）
 
 signals:
-    void sigCameraImage(const QImage &); // 向主线程发送连接状态
-
-private:
-    QImage cvMat2QImage(const cv::Mat &mat);
+    void sigCameraImage(const cv::Mat &); // 向主线程发送连接状态
 };
 
 #endif // QWORKER_H
