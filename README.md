@@ -18,3 +18,5 @@ In this project, we will use opencv to face recognition. Using the data haarcasc
 
 You can copy project 1 and rename to project 2. 
 
+# Step 4: Project 3, Using OpenCV to open a camera
+In this project, we will use opencv to open a camera. Press 'q' to exit the video.
