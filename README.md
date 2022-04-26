@@ -18,8 +18,3 @@ Using haarcascade_frontalface_alt.xml to do face detection.
 Using haarcascade_eye_tree_eyeglasses.xml to do eyes detection.
 This to files are provided by OpenCV, you can get it in the direction "sources/data/haarcascades".
 
-You can copy project 1 and rename to project 2. 
-
-# Step 4: Project 3, Using OpenCV to open a camera
-In this project, we will use opencv to open a camera and show the video in QMainWindow.
-
