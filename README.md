@@ -13,10 +13,18 @@ In this project, we will open a picture and show this picture in QMainWindow.
 
 Using QtCreator 4.10.1 to generate a "Qt Widgets Application", use the default selection, But in "Kit Selection", please use "MinGW 64-bit" not use "MSVC2017 64bit".
 
-# Step 3: Project 2, Using OpenCV to face recognition
-In this project, we will use opencv to face recognition. Using the data haarcascade_frontalface_alt.xml and haarcascade_eye_tree_eyeglasses.xml, which is provided by OpenCV.
+# Step 3: Project 2, Using OpenCV to face and eyes detection
+In this project, we will use opencv to face and eyes detection. 
+
+Using haarcascade_frontalface_alt.xml to do face detection.
+
+Using haarcascade_eye_tree_eyeglasses.xml to do eyes detection.
+
+This to files are provided by OpenCV, you can get it in the direction "sources/data/haarcascades".
 
 You can copy project 1 and rename to project 2. 
 
 # Step 4: Project 3, Using OpenCV to open a camera
 In this project, we will use opencv to open a camera. Press 'q' to exit the video.
+
+# Step 5: Project 4, face 
