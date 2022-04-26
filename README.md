@@ -18,3 +18,5 @@ Using haarcascade_frontalface_alt.xml to do face detection.
 Using haarcascade_eye_tree_eyeglasses.xml to do eyes detection.
 This to files are provided by OpenCV, you can get it in the direction "sources/data/haarcascades".
 
+# Step 4: Project 3, Using OpenCV to open a camera
+In this project, get vedio from camera.
