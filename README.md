@@ -23,3 +23,6 @@ In this project, get vedio from camera.
 
 # Step 5: Project 4, face detection from vedio
 In this project, using a 100ms timer to detect face from vedio.
+
+# Step 6: Project 5, collect face data from vedio
+In this project, we detect a face in vedio,  and save this pic every 500ms.
