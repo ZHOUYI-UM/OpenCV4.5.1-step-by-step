@@ -41,6 +41,7 @@ private:
     QTimer *_timer{nullptr};
     cv::Mat _matFace;
     QString _strDir{""};
+    QString _strID{"win10"};
     unsigned int _picCnt{0};
 };
 #endif // MAINWINDOW_H

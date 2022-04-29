@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1500</width>
+    <width>988</width>
     <height>600</height>
    </rect>
   </property>
@@ -39,7 +39,7 @@
    <widget class="QLabel" name="lblFaces">
     <property name="geometry">
      <rect>
-      <x>1310</x>
+      <x>840</x>
       <y>160</y>
       <width>151</width>
       <height>40</height>
@@ -115,7 +115,7 @@
    <widget class="QPushButton" name="pbSelDir">
     <property name="geometry">
      <rect>
-      <x>1300</x>
+      <x>840</x>
       <y>60</y>
       <width>140</width>
       <height>40</height>
@@ -128,7 +128,7 @@
    <widget class="QPushButton" name="pbStartDetect">
     <property name="geometry">
      <rect>
-      <x>1300</x>
+      <x>840</x>
       <y>110</y>
       <width>140</width>
       <height>40</height>
@@ -144,7 +144,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1500</width>
+     <width>988</width>
      <height>23</height>
     </rect>
    </property>

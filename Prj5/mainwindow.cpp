@@ -7,6 +7,7 @@
 #include <opencv2/imgproc.hpp>
 #include <QTimer>
 #include <QFileDialog>
+#include <QInputDialog>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -115,7 +116,7 @@ void MainWindow::slotFaceDetection()
         ui->lblDetect->setScaledContents(true);
 
         //图片的存放位置
-        QString dir_str = _strDir+"/faces/face" + QString::number(_picCnt) + ".jpg";
+        QString dir_str = _strDir+"/"+_strID+QString::number(_picCnt) + ".jpg";
         //qDebug()<<dir_str;
         //string filename = format("%s%d.jpg",pic_num);
         std::string filename = dir_str.toStdString();
@@ -130,13 +131,6 @@ void MainWindow::on_pbSelDir_clicked()
 
 void MainWindow::on_pbStartDetect_clicked()
 {
-    QString fullPath=_strDir+"/faces";
-    QDir dir(fullPath);
-    if (false==dir.exists())
-    {
-        dir.mkpath(fullPath);
-    }
-
     if (_timer->isActive())
     {
         _timer->stop();
@@ -144,6 +138,18 @@ void MainWindow::on_pbStartDetect_clicked()
     }
     else
     {
+        bool ok;
+        _strID = QInputDialog::getText(this, tr("用户名"),tr("请输入识别的用户名"), QLineEdit::Normal, QDir::home().dirName(), &ok);
+        if (!(ok && !_strID.isEmpty()))
+        {
+            return;
+        }
+        _strDir=_strDir+"/faces/"+_strID;
+        QDir dir(_strDir);
+        if (false==dir.exists())
+        {
+            dir.mkpath(_strDir);
+        }
         ui->pbStartDetect->setText(tr("Stop"));
         //每隔100ms
         _timer->start(500);
