@@ -12,7 +12,8 @@ I do little change, so create_csv.py can be used in python 3.
 
 ## How to use create_csv.py
 The usages is 
-python create_csv.py "att_faces">at.txt
+python create_csv.py "D:/projects/Qt/OpenCV4.5.1-step-by-step/Prj6/att_faces">at.txt
+You must use the absolute path.
 
 ## The struct of at.txt
 Underline is the context of at.txt
