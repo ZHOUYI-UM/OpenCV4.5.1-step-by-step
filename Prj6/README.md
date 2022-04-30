@@ -1,6 +1,7 @@
 # att_faces
 Copyright © 2002 AT&T Laboratories Cambridge.
 The Database of Faces contains a set of face images taken between April 1992 and April 1994 at the lab.
+The image size is 92*112 pixels.
 
 # create_csv.py
 ## What is create_csv.py
