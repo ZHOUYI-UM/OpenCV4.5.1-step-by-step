@@ -29,3 +29,7 @@ In this project, we detect a face in vedio,  and save this pic every 500ms.
 
 # Step 7: Project 6, Train the image
 In this project, we will use python to train the face image. Because python is simplier than C++.
+
+# Step 8: Project 7, Generate face data in C++
+In this project, we will use the at.txt, which is generated in project 6, to make a face data.
+We will open a face image, and push "Face data" button, We will generate EigenFaceRecognizer, FisherFaceRecognizer and LBPHFaceRecognizer from at.txt.
