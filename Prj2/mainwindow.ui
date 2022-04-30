@@ -59,7 +59,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Face Recognition</string>
+     <string>Face Detection</string>
     </property>
    </widget>
   </widget>

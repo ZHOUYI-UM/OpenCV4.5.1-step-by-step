@@ -15,6 +15,11 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    string fDetectorPath = "D:\\opencv4.5.1\\sources\\data\\haarcascades\\haarcascade_frontalface_alt.xml";
+    _face_detector.load(fDetectorPath);
+    string eDetectorPath = "D:\\opencv4.5.1\\sources\\data\\haarcascades\\haarcascade_eye_tree_eyeglasses.xml";
+    _eyes_detector.load(eDetectorPath);
 }
 
 MainWindow::~MainWindow()
@@ -84,27 +89,20 @@ void MainWindow::on_pbLoadPicture_clicked()
 
 void MainWindow::on_pbDetect_clicked()
 {
-    CascadeClassifier face_detector;
-    CascadeClassifier eyes_detector;
-
-    string fDetectorPath = "D:\\opencv4.5.1\\sources\\data\\haarcascades\\haarcascade_frontalface_alt.xml";
-    face_detector.load(fDetectorPath);
-    string eDetectorPath = "D:\\opencv4.5.1\\sources\\data\\haarcascades\\haarcascade_eye_tree_eyeglasses.xml";
-    eyes_detector.load(eDetectorPath);
     vector<Rect> faces;
 
     Mat imgGray;
 
     cvtColor(matImageSource, imgGray, COLOR_RGB2GRAY);
     equalizeHist(imgGray, imgGray);
-    face_detector.detectMultiScale(imgGray, faces, 1.1, 2, 0 | CASCADE_SCALE_IMAGE, Size(30, 30));//-- 多尺寸检测人脸
+    _face_detector.detectMultiScale(imgGray, faces, 1.1, 2, 0 | CASCADE_SCALE_IMAGE, Size(30, 30));//-- 多尺寸检测人脸
     for (unsigned int i = 0; i < faces.size(); i++)
     {
         Point center(faces[i].x + faces[i].width * 0.5, faces[i].y + faces[i].height * 0.5);
         ellipse(matImageSource, center, Size(faces[i].width * 0.5, faces[i].height * 0.5), 0, 0, 360, Scalar(255, 0, 255), 4, 8, 0);
         Mat faceROI = imgGray(faces[i]);
         vector<Rect> eyes;
-        eyes_detector.detectMultiScale(faceROI, eyes, 1.1, 2, 0 | CASCADE_SCALE_IMAGE, Size(30, 30));//-- 在每张人脸上检测双眼
+        _eyes_detector.detectMultiScale(faceROI, eyes, 1.1, 2, 0 | CASCADE_SCALE_IMAGE, Size(30, 30));//-- 在每张人脸上检测双眼
         for (unsigned int j = 0; j < eyes.size(); j++)
         {
             Point center(faces[i].x + eyes[j].x + eyes[j].width * 0.5, faces[i].y + eyes[j].y + eyes[j].height * 0.5);

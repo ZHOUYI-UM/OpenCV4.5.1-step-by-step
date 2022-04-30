@@ -33,5 +33,8 @@ private:
     Mat matImageSource;
     Mat matImageGray;
     QImage _imgDis;
+
+    CascadeClassifier _face_detector;
+    CascadeClassifier _eyes_detector;
 };
 #endif // MAINWINDOW_H

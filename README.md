@@ -33,3 +33,8 @@ In this project, we will use python to train the face image. Because python is s
 # Step 8: Project 7, Generate face data in C++
 In this project, we will use the at.txt, which is generated in project 6, to make a face data.
 We will open a face image, and push "Face data" button, We will generate EigenFaceRecognizer, FisherFaceRecognizer and LBPHFaceRecognizer from at.txt.
+Then press load image to load a 92*112 gray image to recognize the face.
+
+# Step 9: Project 8, Real time face recognization
+In this project, we will use the face data, which is generated in poject 7, to make a face recognization from a camera.
+It seems that the correction using FisherFaceRecognizer is a little low.

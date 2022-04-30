@@ -2,15 +2,18 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QImage>
 #include <opencv2/opencv.hpp>
 #include <opencv2/face/facerec.hpp>
-#include <QImage>
 
 using namespace cv;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
+
+class QWorker;
+class QTimer;
 
 class MainWindow : public QMainWindow
 {
@@ -21,25 +24,20 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pbGenerateData_clicked();
-
-    void on_pbLoadImage_clicked();
-
-    void on_pbRecogImage_clicked();
+    void slotCameraImage(const cv::Mat &);
+    void slotStartDetect();
+    void slotFaceDetection();
 
 private:
-    void startTraining();
     QImage cvMat2QImage(const cv::Mat &mat);
 
 private:
     Ui::MainWindow *ui;
-
-private:
-    Ptr<face::BasicFaceRecognizer> _modeEigenFaceRecognizer;
-    Ptr<face::BasicFaceRecognizer> _modelFisherFaceRecognizer;
-    Ptr<face::LBPHFaceRecognizer>  _modelLBPHFaceRecognizer;
-
-    cv::Mat _matSource;
-    QString _strFileImage;
+    QWorker *_threadCamera{nullptr};
+    CascadeClassifier face_detector;
+    CascadeClassifier eyes_detector;
+    QTimer *_timer{nullptr};
+    cv::Mat _matFace;
+    Ptr<face::BasicFaceRecognizer> _model;
 };
 #endif // MAINWINDOW_H
