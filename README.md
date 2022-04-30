@@ -26,3 +26,6 @@ In this project, using a 100ms timer to detect face from vedio.
 
 # Step 6: Project 5, collect face data from vedio
 In this project, we detect a face in vedio,  and save this pic every 500ms.
+
+# Step 7: Project 6, Train the image
+In this project, we will use python to train the face image. Because python is simplier than C++.
